@@ -1,6 +1,6 @@
 #include "Jsonhandle.h"
 
-std::map<std::string, std::string> Parse(const std::string &jsonString)
+std::map<std::string, std::string> Jsonhandle::Parse(const std::string &jsonString)
 {
     std::map<std::string, std::string> jsonMap;
     size_t start = 0;
@@ -28,7 +28,7 @@ std::map<std::string, std::string> Parse(const std::string &jsonString)
     return jsonMap;
 }
 
-std::string ReParse(const std::map<std::string, std::string> &jsonMap)
+std::string Jsonhandle::ReParse(const std::map<std::string, std::string> &jsonMap)
 {
     std::string jsonString = "{";
     for(const auto &pair : jsonMap) {

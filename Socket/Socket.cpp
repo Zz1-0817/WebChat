@@ -1,4 +1,5 @@
 #include "Socket.h"
+#include <cstring>
 
 Socket::Socket() : ip(""), port(0), fd(0)
 {

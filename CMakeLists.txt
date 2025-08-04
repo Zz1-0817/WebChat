@@ -31,7 +31,10 @@ find_package(Threads REQUIRED)
 
 set(HTTP_SOURCE ./Http/http_msg.cpp ./Http/http_handle.cpp)
 set(SQLITE_SOURCE ./SQLite/SQLhandle.cpp)
-set(SOCKET_SOURCE ./Socket/Socket.h)
+set(SOCKET_SOURCE
+    ./Socket/Socket.cpp
+    ./Socket/Socket.h
+)
 set(U_SOURCE ./Utility/Jsonhandle.cpp ./Utility/UserInfo.cpp ./Utility/TimeH.cpp ./Utility/MsgInfo.cpp ./Utility/ChatRoomInfo.cpp)
 
 add_executable(${CMAKE_PROJECT_NAME} 

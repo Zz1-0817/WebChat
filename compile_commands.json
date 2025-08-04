@@ -1,0 +1,68 @@
+[
+{
+  "directory": "/home/zz1au/projects/WebChat",
+  "command": "/usr/bin/cc  -I/home/zz1au/projects/WebChat/. -I/home/zz1au/projects/WebChat/./Socket -I/home/zz1au/projects/WebChat/./SQLite -I/home/zz1au/projects/WebChat/./Utility -I/home/zz1au/projects/WebChat/./Http -I/home/zz1au/projects/WebChat/sqlite3 -DSQLITE_ENABLE_FTS5 -DSQLITE_ENABLE_JSON1 -o CMakeFiles/sqlite3.dir/sqlite3/sqlite3.c.o -c /home/zz1au/projects/WebChat/sqlite3/sqlite3.c",
+  "file": "/home/zz1au/projects/WebChat/sqlite3/sqlite3.c",
+  "output": "CMakeFiles/sqlite3.dir/sqlite3/sqlite3.c.o"
+},
+{
+  "directory": "/home/zz1au/projects/WebChat",
+  "command": "/usr/bin/c++  -I/home/zz1au/projects/WebChat/. -I/home/zz1au/projects/WebChat/./Socket -I/home/zz1au/projects/WebChat/./SQLite -I/home/zz1au/projects/WebChat/./Utility -I/home/zz1au/projects/WebChat/./Http -I/home/zz1au/projects/WebChat/sqlite3 -std=gnu++17 -o CMakeFiles/WebChat.dir/Socket/Socket.cpp.o -c /home/zz1au/projects/WebChat/Socket/Socket.cpp",
+  "file": "/home/zz1au/projects/WebChat/Socket/Socket.cpp",
+  "output": "CMakeFiles/WebChat.dir/Socket/Socket.cpp.o"
+},
+{
+  "directory": "/home/zz1au/projects/WebChat",
+  "command": "/usr/bin/c++  -I/home/zz1au/projects/WebChat/. -I/home/zz1au/projects/WebChat/./Socket -I/home/zz1au/projects/WebChat/./SQLite -I/home/zz1au/projects/WebChat/./Utility -I/home/zz1au/projects/WebChat/./Http -I/home/zz1au/projects/WebChat/sqlite3 -std=gnu++17 -o CMakeFiles/WebChat.dir/SQLite/SQLhandle.cpp.o -c /home/zz1au/projects/WebChat/SQLite/SQLhandle.cpp",
+  "file": "/home/zz1au/projects/WebChat/SQLite/SQLhandle.cpp",
+  "output": "CMakeFiles/WebChat.dir/SQLite/SQLhandle.cpp.o"
+},
+{
+  "directory": "/home/zz1au/projects/WebChat",
+  "command": "/usr/bin/c++  -I/home/zz1au/projects/WebChat/. -I/home/zz1au/projects/WebChat/./Socket -I/home/zz1au/projects/WebChat/./SQLite -I/home/zz1au/projects/WebChat/./Utility -I/home/zz1au/projects/WebChat/./Http -I/home/zz1au/projects/WebChat/sqlite3 -std=gnu++17 -o CMakeFiles/WebChat.dir/Utility/Jsonhandle.cpp.o -c /home/zz1au/projects/WebChat/Utility/Jsonhandle.cpp",
+  "file": "/home/zz1au/projects/WebChat/Utility/Jsonhandle.cpp",
+  "output": "CMakeFiles/WebChat.dir/Utility/Jsonhandle.cpp.o"
+},
+{
+  "directory": "/home/zz1au/projects/WebChat",
+  "command": "/usr/bin/c++  -I/home/zz1au/projects/WebChat/. -I/home/zz1au/projects/WebChat/./Socket -I/home/zz1au/projects/WebChat/./SQLite -I/home/zz1au/projects/WebChat/./Utility -I/home/zz1au/projects/WebChat/./Http -I/home/zz1au/projects/WebChat/sqlite3 -std=gnu++17 -o CMakeFiles/WebChat.dir/Utility/UserInfo.cpp.o -c /home/zz1au/projects/WebChat/Utility/UserInfo.cpp",
+  "file": "/home/zz1au/projects/WebChat/Utility/UserInfo.cpp",
+  "output": "CMakeFiles/WebChat.dir/Utility/UserInfo.cpp.o"
+},
+{
+  "directory": "/home/zz1au/projects/WebChat",
+  "command": "/usr/bin/c++  -I/home/zz1au/projects/WebChat/. -I/home/zz1au/projects/WebChat/./Socket -I/home/zz1au/projects/WebChat/./SQLite -I/home/zz1au/projects/WebChat/./Utility -I/home/zz1au/projects/WebChat/./Http -I/home/zz1au/projects/WebChat/sqlite3 -std=gnu++17 -o CMakeFiles/WebChat.dir/Utility/TimeH.cpp.o -c /home/zz1au/projects/WebChat/Utility/TimeH.cpp",
+  "file": "/home/zz1au/projects/WebChat/Utility/TimeH.cpp",
+  "output": "CMakeFiles/WebChat.dir/Utility/TimeH.cpp.o"
+},
+{
+  "directory": "/home/zz1au/projects/WebChat",
+  "command": "/usr/bin/c++  -I/home/zz1au/projects/WebChat/. -I/home/zz1au/projects/WebChat/./Socket -I/home/zz1au/projects/WebChat/./SQLite -I/home/zz1au/projects/WebChat/./Utility -I/home/zz1au/projects/WebChat/./Http -I/home/zz1au/projects/WebChat/sqlite3 -std=gnu++17 -o CMakeFiles/WebChat.dir/Utility/MsgInfo.cpp.o -c /home/zz1au/projects/WebChat/Utility/MsgInfo.cpp",
+  "file": "/home/zz1au/projects/WebChat/Utility/MsgInfo.cpp",
+  "output": "CMakeFiles/WebChat.dir/Utility/MsgInfo.cpp.o"
+},
+{
+  "directory": "/home/zz1au/projects/WebChat",
+  "command": "/usr/bin/c++  -I/home/zz1au/projects/WebChat/. -I/home/zz1au/projects/WebChat/./Socket -I/home/zz1au/projects/WebChat/./SQLite -I/home/zz1au/projects/WebChat/./Utility -I/home/zz1au/projects/WebChat/./Http -I/home/zz1au/projects/WebChat/sqlite3 -std=gnu++17 -o CMakeFiles/WebChat.dir/Utility/ChatRoomInfo.cpp.o -c /home/zz1au/projects/WebChat/Utility/ChatRoomInfo.cpp",
+  "file": "/home/zz1au/projects/WebChat/Utility/ChatRoomInfo.cpp",
+  "output": "CMakeFiles/WebChat.dir/Utility/ChatRoomInfo.cpp.o"
+},
+{
+  "directory": "/home/zz1au/projects/WebChat",
+  "command": "/usr/bin/c++  -I/home/zz1au/projects/WebChat/. -I/home/zz1au/projects/WebChat/./Socket -I/home/zz1au/projects/WebChat/./SQLite -I/home/zz1au/projects/WebChat/./Utility -I/home/zz1au/projects/WebChat/./Http -I/home/zz1au/projects/WebChat/sqlite3 -std=gnu++17 -o CMakeFiles/WebChat.dir/Http/http_msg.cpp.o -c /home/zz1au/projects/WebChat/Http/http_msg.cpp",
+  "file": "/home/zz1au/projects/WebChat/Http/http_msg.cpp",
+  "output": "CMakeFiles/WebChat.dir/Http/http_msg.cpp.o"
+},
+{
+  "directory": "/home/zz1au/projects/WebChat",
+  "command": "/usr/bin/c++  -I/home/zz1au/projects/WebChat/. -I/home/zz1au/projects/WebChat/./Socket -I/home/zz1au/projects/WebChat/./SQLite -I/home/zz1au/projects/WebChat/./Utility -I/home/zz1au/projects/WebChat/./Http -I/home/zz1au/projects/WebChat/sqlite3 -std=gnu++17 -o CMakeFiles/WebChat.dir/Http/http_handle.cpp.o -c /home/zz1au/projects/WebChat/Http/http_handle.cpp",
+  "file": "/home/zz1au/projects/WebChat/Http/http_handle.cpp",
+  "output": "CMakeFiles/WebChat.dir/Http/http_handle.cpp.o"
+},
+{
+  "directory": "/home/zz1au/projects/WebChat",
+  "command": "/usr/bin/c++  -I/home/zz1au/projects/WebChat/. -I/home/zz1au/projects/WebChat/./Socket -I/home/zz1au/projects/WebChat/./SQLite -I/home/zz1au/projects/WebChat/./Utility -I/home/zz1au/projects/WebChat/./Http -I/home/zz1au/projects/WebChat/sqlite3 -std=gnu++17 -o CMakeFiles/WebChat.dir/Server/Chatserver.cpp.o -c /home/zz1au/projects/WebChat/Server/Chatserver.cpp",
+  "file": "/home/zz1au/projects/WebChat/Server/Chatserver.cpp",
+  "output": "CMakeFiles/WebChat.dir/Server/Chatserver.cpp.o"
+}
+]

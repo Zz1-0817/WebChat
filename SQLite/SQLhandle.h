@@ -3,7 +3,7 @@
 #include <map>
 #include <iomanip>
 #include <stdexcept>
-#include <cstring>
+#include <string>
 #include "ChatRoomInfo.h"
 
 extern "C" {

@@ -2,7 +2,7 @@
 #include<sys/socket.h>
 #include<netinet/in.h>
 #include<arpa/inet.h>
-#include<cstring>
+#include<string>
 #include<unistd.h>
 #include<fcntl.h>
 class Socket

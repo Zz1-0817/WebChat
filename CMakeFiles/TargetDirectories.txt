@@ -1,0 +1,4 @@
+/home/zz1au/projects/WebChat/CMakeFiles/sqlite3.dir
+/home/zz1au/projects/WebChat/CMakeFiles/WebChat.dir
+/home/zz1au/projects/WebChat/CMakeFiles/edit_cache.dir
+/home/zz1au/projects/WebChat/CMakeFiles/rebuild_cache.dir

@@ -37,6 +37,10 @@ std::vector<User> ChatRoomInfo::getUsers() const
     return users;
 }
 
+int ChatRoomInfo::getUserCount() const {
+    return users.size();
+}
+
 std::string ChatRoomInfo::MsgsToJson()
 {
     std::string MsgsJson = "{";
