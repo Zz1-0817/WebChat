@@ -1,6 +1,5 @@
 #include "http_msg.h"
 
-using namespace HTTP;
 
 #include <iostream>
 #include <string>
@@ -66,7 +65,7 @@ HttpMsg::HttpMsg(std::string HR)
 
             value.erase(0, value.find_first_not_of(" \r"));
             value.erase(value.find_last_not_of(" \r") + 1);
-            this -> headers[key] = value;
+            headers[key] = value;
         }
     }
 }

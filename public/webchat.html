@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WEBCHAT</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            background: linear-gradient(135deg, #1a2a6c, #b21f1f, #1a2a6c);
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+        }
+        
+        .chat-container {
+            width: 100%;
+            max-width: 800px;
+            height: 80vh;
+            background-color: rgba(255, 255, 255, 0.9);
+            border-radius: 16px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+            display: flex;
+            flex-direction: column;
+            overflow: hidden;
+        }
+        
+        .chat-header {
+            background: linear-gradient(to right, #3498db, #2980b9);
+            color: white;
+            padding: 18px 25px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .chat-header h1 {
+            font-size: 1.5rem;
+            font-weight: 600;
+        }
+        
+        .status {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        
+        .status-indicator {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background-color: #2ecc71;
+        }
+        
+        .chat-messages {
+            flex: 1;
+            padding: 20px;
+            overflow-y: auto;
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+        
+        .message {
+            max-width: 70%;
+            padding: 12px 18px;
+            border-radius: 18px;
+            position: relative;
+            animation: fadeIn 0.3s ease-out;
+        }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        .received {
+            align-self: flex-start;
+            background-color: #e9ebee;
+            border-bottom-left-radius: 5px;
+        }
+        
+        .sent {
+            align-self: flex-end;
+            background: linear-gradient(to right, #3498db, #2980b9);
+            color: white;
+            border-bottom-right-radius: 5px;
+        }
+        
+        .message-info {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 5px;
+            font-size: 0.75rem;
+            opacity: 0.8;
+        }
+        
+        .input-area {
+            display: flex;
+            padding: 15px;
+            background-color: #f0f2f5;
+            border-top: 1px solid #ddd;
+        }
+        
+        .message-input {
+            flex: 1;
+            padding: 14px 18px;
+            border: none;
+            border-radius: 24px;
+            font-size: 1rem;
+            outline: none;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1) inset;
+        }
+        
+        .send-button {
+            margin-left: 12px;
+            padding: 12px 24px;
+            background: linear-gradient(to right, #3498db, #2980b9);
+            color: white;
+            border: none;
+            border-radius: 24px;
+            cursor: pointer;
+            font-weight: 600;
+            transition: all 0.2s;
+        }
+        
+        .send-button:hover {
+            background: linear-gradient(to right, #2980b9, #2573a7);
+            transform: scale(1.05);
+        }
+        
+        .timestamp {
+            font-size: 0.7rem;
+        }
+        
+        .sender {
+            font-weight: 600;
+            margin-bottom: 3px;
+        }
+        
+        @media (max-width: 600px) {
+            .chat-container {
+                height: 90vh;
+            }
+            
+            .message {
+                max-width: 85%;
+            }
+            
+            .send-button {
+                padding: 12px 18px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="chat-container">
+        <div class="chat-header">
+            <h1>WEBCHAT</h1>
+            <div class="status">
+                <div class="status-indicator"></div>
+                <span>在线 (3人)</span>
+            </div>
+        </div>
+        
+        <div class="chat-messages" id="chatMessages">
+            <!-- 消息将通过JavaScript动态添加 -->
+        </div>
+        
+        <div class="input-area">
+            <input type="text" class="message-input" id="messageInput" placeholder="输入消息..." autocomplete="off">
+            <button class="send-button" onclick="sendMessage()">发送</button>
+        </div>
+    </div>
+
+    <script>
+        const chatMessages = document.getElementById('chatMessages');
+        const messageInput = document.getElementById('messageInput');
+        
+        // 示例用户数据
+        const users = [
+            { id: 1, name: '张三', color: '#3498db' },
+            { id: 2, name: '李四', color: '#e74c3c' },
+            { id: 3, name: '王五', color: '#2ecc71' }
+        ];
+        
+        // 初始化一些示例消息
+        const initialMessages = [
+            
+        ];
+        
+        // 显示初始消息
+        initialMessages.forEach(msg => addMessageToChat(msg.sender, msg.text, msg.time));
+        
+        // 添加消息到聊天窗口
+        function addMessageToChat(sender, text, timestamp) {
+            const isCurrentUser = sender.id === 1; // 假设当前用户是张三（id=1）
+            const timestampStr = timestamp || getCurrentTime();
+            
+            const messageDiv = document.createElement('div');
+            messageDiv.className = `message ${isCurrentUser ? 'sent' : 'received'}`;
+            
+            messageDiv.innerHTML = `
+                <div class="sender" style="color: ${sender.color}">${sender.name}</div>
+                <div class="message-text">${text}</div>
+                <div class="message-info">
+                    <span class="timestamp">${timestampStr}</span>
+                </div>
+            `;
+            
+            chatMessages.appendChild(messageDiv);
+            chatMessages.scrollTop = chatMessages.scrollHeight;
+        }
+        
+        // 发送消息
+        function sendMessage() {
+            const messageText = messageInput.value.trim();
+            if (!messageText) return;
+            
+            // 添加当前用户的消息
+            addMessageToChat(users[0], messageText);
+            
+            // 清空输入框
+            messageInput.value = '';
+            
+            // 模拟其他用户回复（随机选择）
+            setTimeout(() => {
+                const randomUser = users[Math.floor(Math.random() * users.length)];
+                if (randomUser.id !== 1) { // 不是当前用户
+                    const responses = [
+                        '你好！',
+                        '今天过得怎么样？',
+                        '这个聊天室确实很棒！',
+                        '你最近在忙什么？',
+                        '我也觉得这个设计很出色',
+                        '谢谢你的消息！',
+                        '有什么新鲜事分享吗？'
+                    ];
+                    const response = responses[Math.floor(Math.random() * responses.length)];
+                    addMessageToChat(randomUser, response);
+                }
+            }, 1000 + Math.random() * 3000);
+        }
+        
+        // 获取当前时间
+        function getCurrentTime() {
+            const now = new Date();
+            return `${now.getHours().toString().padStart(2, '0')}:${now.getMinutes().toString().padStart(2, '0')}`;
+        }
+        
+        // 按Enter发送消息
+        messageInput.addEventListener('keypress', (e) => {
+            if (e.key === 'Enter') {
+                sendMessage();
+            }
+        });
+    </script>
+</body>
+</html>
